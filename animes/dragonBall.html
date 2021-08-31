@@ -1,0 +1,139 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/geral.css">
+    <link rel="stylesheet" href="../css/aniimes.css">
+    <link rel="stylesheet" href="../css/fontes.css">
+    <title>Dragon Ball</title>
+    <script src="../js/animes.js"></script>
+</head>
+<body>
+    <div id="principal">
+        <div id="header">
+            <div id="menuAtivo">&#9776;</div>
+            <a id="logoMenu" href="../index.html">
+                <img src="../img/logo.svg" alt="logo" id="logo">
+            </a>
+            <nav class="nav-menu">
+                <div id="menuDesativa">X</div>
+                <ul>
+                    <li><a href="../sobrenos.html">Sobre nós</a></li>
+                    <li><a href="../loja.html">Loja</a></li>
+                    <li class="subgrupo">
+                        <a href="javascript:">
+                            <p class="mangaMenu">Mangá</p>
+                            <svg id="setaDropdown" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </a>
+                        <ul>
+                            <li><a href="../animes/boruto.html?manga=Boruto: Naruto Next Generations">Boruto</a></li>
+                            <li><a href="../animes/onePiece.html?manga=one piece">One Piece</a></li>
+                            <li><a href="../animes/dragonBall.html?manga=dragon ball">Dragon Ball</a></li>
+                            <li><a href="../animes/tokioGhoul.html?manga=tokyo ghoul">Tokyo Ghoul</a></li>
+                            <li><a href="../animes/jujutsuKaisen.html?manga=jujutsu kaisen">Jujutsu Kaisen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="carrossel">
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_naruto.jpg" alt="carrossel - 1">
+                <div class="legenda"><p>Naruto</p></div>
+            </div>
+    
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_dragonballsuper-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Dragon Ball Super</p></div>
+            </div>
+
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_tokyoghoul.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Tokyo Ghoul</p></div>
+            </div>
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_onepiece-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>One Piece</p></div>
+            </div>
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_jujutso-kaisen-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Jujutsu Kaisen</p></div>
+            </div>
+    
+            <a href="#" class="anterior" onclick="imagemSeta(-1)">
+                <img src="../img/fotos ideias/seta-esquerda.svg" alt="anterior">
+            </a>
+            <a href="#" class="proximo" onclick="imagemSeta(1)">
+                <img src="../img/fotos ideias/seta-direita.svg" alt="proximo">
+            </a>
+            
+            <div id="controleCarrossel">
+                <p id="pausar">&#10074;&#10074;</p>
+                <p id="despausar" style="display: none;">&#9654;</p>
+            </div>
+
+            <div class="caixaBotoes">
+                <span class="botao" onclick="imagemBotao(1)"></span>
+                <span class="botao" onclick="imagemBotao(2)"></span>
+                <span class="botao" onclick="imagemBotao(3)"></span>
+                <span class="botao" onclick="imagemBotao(4)"></span>
+                <span class="botao" onclick="imagemBotao(5)"></span>
+            </div>
+        </div>
+        <div id="conteudo">
+            <div id="apresentacaoAnime">
+                <img src="../img/Dragon Ball/Dragon Ball Super-1.jpg" alt="One Piece">
+                <div id="resumo">
+                    <h2>Dragon Ball</h2>
+                    <p>Tendo derrotado Boo, Goku está começando a se cansar de sua vida na Terra. Sua esposa, Chi-chi, quer que ele arente, mas tudo o que ele quer fazer é treinar e lutar contra inimigos mais fortes. Em outros lugares do universo, o Deus da Destruição, Beerus, e seu atendente Whis estão viajando de planeta em planeta em busca de comida e entretenimento. Depois de explodir algumas vítimas infelizes, Beerus é lembrado de um homem de seus sonhos com o apelido "Super Saiyajin Deus", ou algo assim... O Deus da Destruição coloca seus olhos na Terra para encontrar este homem misterioso! Talvez isso dê ao Goku algo para fazer?</p>
+                </div>
+            </div>
+            <div id="compartilharPagina"></div>
+            <div id="mangaPlus">
+                <h1>Mangá Plus</h1>
+                <a href="https://mangaplus.shueisha.co.jp/viewer/1000317" target="blank_">
+                    <img src="../img/Dragon Ball/Manga/001.jpg">
+                    <div id="conteudoMangaPlus">
+                        <p>001 - Episódio 1: Premonição de Deus da Destruição</p>
+                        <p id="dataMangaPlus">20/01/2019</p>
+                    </div>
+                </a>
+                <a href="https://mangaplus.shueisha.co.jp/viewer/1000318" target="blank_">
+                    <img src="../img/Dragon Ball/Manga/002.jpg">
+                    <div id="conteudoMangaPlus">
+                        <p>002 - Episódio 2: Goku Derrotado</p>
+                        <p id="dataMangaPlus">20/01/2019</p>
+                    </div>
+                </a>
+                <a href="https://mangaplus.shueisha.co.jp/viewer/1000319" target="blank_">
+                    <img src="../img/Dragon Ball/Manga/003.jpg">
+                    <div id="conteudoMangaPlus">
+                        <p>003 - Episódio 3: A Fúria da Cerveja</p>
+                        <p id="dataMangaPlus">20/01/2019</p>
+                    </div>
+                </a>
+            </div>
+            <div id="personagens">
+                <img src="../img/carregando.gif" id="carregando" alt="carregando">
+            </div>
+            <div id="mediasManga"></div>
+            <div id="outrosSobreManga">
+                <img src="../img/carregando.gif" id="carregando" alt="carregando">
+            </div>
+        </div>
+        <div id="rodape">
+            <div id="linksRodape">
+                <p><a href="">Termos de uso</a> | <a href="">Contato</a></p>
+            </div>
+            <div id="feitoPor">
+                <p>Feito por Mauricio B. Teixeira. </p><p>&copyCopyright 2021</p>
+            </div>
+            <img src="../img/logo.svg" alt="logo">
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../js/index.js"></script>

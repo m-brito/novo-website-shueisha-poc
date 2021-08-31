@@ -1,0 +1,158 @@
+.cartaoProduto{
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.3);
+    height: auto;
+    width: 300px;
+    background-color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    margin: 20px;
+    transition: 1s;
+    border-radius: 20px;
+    padding-bottom: 30px;
+}
+.cartaoProduto a{
+    margin-top: 10px;
+    position: absolute;
+    font-size: 20px;
+    text-decoration: none;
+    bottom: 5px;
+}
+.cartaoProduto .imagemProduto{
+    width: 300px;
+    height: 350px;
+    overflow: hidden;
+}
+.cartaoProduto .imagemProduto img{
+    min-height: 100%;
+    width: 100%;
+}
+.cartaoProduto p{
+    font-size: 22px;
+}
+.cartaoProduto a{
+    font-size: 22px;
+    color: #6fc5e9;
+}
+.carrinho{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: none;
+    font-weight: bold;
+    background-color: #6fc5e9;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 20;
+    border-radius: 10px;
+}
+.excluirCarrinho{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: none;
+    font-weight: bold;
+    background-color: #ff4747;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 20;
+    border-radius: 10px;
+}
+.cartaoProduto:hover .carrinho, .cartaoProduto:hover .excluirCarrinho{
+    display: flex;
+}
+#carrinhoCompras{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+#carrinhoCompras img{
+    height: 100px;
+    width: 100px;
+    animation: carrinho 1s infinite alternate;
+}
+@keyframes carrinho {
+    from {
+      transform: translatex(10px);
+    }
+    to {
+      transform: translatex(-10px);
+    }
+  }
+#telaCarrinhoCompras{
+    border: 2px solid #494949;
+    position: fixed;
+    z-index: 10;
+    height: 70%;
+    width: 80%;
+    overflow: auto;
+    background-color: #1b1b1bb5;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: none;
+    padding: 0 10px;
+}
+#principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#msgVazio{
+    color: white;
+    display: none;
+    font-size: 30px;
+}
+#voltarLoja{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 40px;
+    width: 40px;
+    color: white;
+    background-color: #ff4a4a;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+#finalizar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 40px;
+    width: 80px;
+    color: white;
+    background-color: #30a73f;
+    font-weight: bold;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+#telaCarrinhoCompras::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+    border-radius: 20px;
+}
+#telaCarrinhoCompras::-webkit-scrollbar {
+    width: 8px;
+    background: #6fc5e9;
+    border-radius: 20px;
+}
+#telaCarrinhoCompras::-webkit-scrollbar-thumb {
+    background: #6fc5e9;
+    border-radius: 20px;
+}

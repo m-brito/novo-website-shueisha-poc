@@ -1,0 +1,235 @@
+/* pesquisa variaveis no css */
+/* Ou seja, o mesmo formato do CSS que já conhecemos.
+
+Veja alguns detalhes sobre as variáveis nativas do CSS:
+
+Variáveis são definidas por seletor (como se fossem variáveis locais), ou seja, elas não estarão disponíveis para outros seletores;
+Variáveis sofrem o efeito cascata, isso quer dizer que os filhos de um elemento poderão acessar as variáveis de seus elementos pai;
+Você só poderá criar variáveis para valores, não para seletores e nem propriedades;
+Caso queira criar “Variáveis globais” (disponíveis para todos os elementos), utilize o seletor :root. */
+
+:root {
+    --corLinha: #272727;
+    --corLinhaCartao: #7e7e7e; 
+}
+
+/* para usar a variavel colocamos: var(--corLinha) */
+
+#apresentacao{
+    height: auto;
+    background-color: #1B1B1B;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    /* border-radius: 20px; */
+}
+#apresentacao #resumo{
+    padding: 20px;
+    border: 2px solid var(--corLinha);
+}
+#apresentacao h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+#apresentacao p{
+    width: 100%;
+    text-align: justify;
+    font-weight: normal;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #000000;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#titulo{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+
+.sobreShueisha{
+    background-color: rgb(161, 161, 161);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+.sobreShueisha h2{
+    margin-top: 20px;
+    width: 70%;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+.principal{
+    margin-top: 50px;
+    min-width: 170px;
+    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: left; */
+}
+
+.principal h2{
+    color: white;
+    margin: 20px;
+    font-size: 50px;
+    flex-wrap: nowrap;
+}
+
+.linhaDoTempo{
+    /* margin: 40px; */
+    border-left: 3px solid var(--corLinha);
+    padding: 30px 0;
+}
+
+.tempo{
+    display: flex;
+    width: 75px;
+    height: auto;
+    flex-wrap: nowrap;
+}
+.tempoCartao{
+    display: flex;
+    max-width: 65px;
+    height: auto;
+    flex-wrap: nowrap;
+}
+
+.tempoMes{
+    margin-left: 15px;
+}
+
+.tempo, .tempoCartao, .tempoTitulo{
+    padding: 5px 15px;
+    background-color: #f0f0f0;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+}
+
+.tempoTitulo{
+    width: 300px;
+    font-size: 40px;
+}
+
+.cartoesLinhaDoTempo{
+    position: relative;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+
+.cartaoLinhaDoTempo{
+    margin-left: 35px;
+}
+
+  
+.cartoesLinhaDoTempo::before{
+    content: "";
+    width: 35px;
+    height: 5px;
+    background-color: var(--corLinha);
+
+    position: absolute;
+    top: calc(50% - (5px / 2));
+    left: 0;
+}
+
+.anoDeGrupo{
+    font-weight: bold !important;
+    padding: 10px 20px !important;
+    border-radius: 0 15px 15px 0;
+    color: white !important;
+    background-color: var(--corLinha) !important;
+    margin: 30px 0 15px;
+}
+
+.cartao{
+    border-radius: 0 20px 20px 0;
+    border-left: 3px solid var(--corLinhaCartao);
+    box-shadow: 5px 9px 10px rgba(255, 255, 255, 0.431);
+    background-color: #e0e0e0;
+    padding: 20px;
+    transition: 0.5s;
+}
+.cartao:hover{
+    transform: scale(1.1);
+    background-color:#e0e0e0b9;
+    transition: 0.5s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.conteudoCartao{
+    margin-top: 5px;
+}
+
+.conteudoCartao p{
+    text-align: justify;
+    margin-top: 10px;
+}
+
+p.comentarios{
+    width: 70%;
+    text-align: justify;
+}
+.mangasLinhaDoTempo{
+    width: 100%;
+    display: flex;
+}
+.mangasLinhaDoTempo .imagem{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+.mangasLinhaDoTempo .imagem img{
+    height: 300px;
+    width: auto;
+}
+.mangasLinhaDoTempo .conteudo{
+    margin-left: 20px;
+}
+.tempoCartaoManga{
+    flex-wrap: nowrap;
+    width: 150px !important;
+    max-width: none !important;
+    text-align: center;
+}
+
+@media(max-width: 1000px) {
+    .mangasLinhaDoTempo{
+        flex-direction: column;
+    }
+    .mangasLinhaDoTempo .imagem{
+        overflow: hidden;
+        max-height: 400px;
+    }
+    .mangasLinhaDoTempo .imagem img{
+        width: 100%;
+        height: auto;
+    }
+    .mangasLinhaDoTempo .conteudo{
+        margin-left: 0px;
+    }
+}

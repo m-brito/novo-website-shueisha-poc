@@ -1,0 +1,343 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sobrenos.css">
+    <link rel="stylesheet" href="css/fontes.css">
+    <title>Sobre Nós</title>
+</head>
+<body>
+    
+    <div id="principal">
+        <div id="header">
+            <div id="menuAtivo">&#9776;</div>
+            <a id="logoMenu" href="index.html">
+                <img src="img/logo.svg" alt="logo" id="logo">
+            </a>
+            <nav class="nav-menu">
+                <div id="menuDesativa">X</div>
+                <ul>
+                    <li><a href="">Sobre nós</a></li>
+                    <li><a href="loja.html">Loja</a></li>
+                    <li class="subgrupo">
+                        <a href="javascript:">
+                            <p class="mangaMenu">Mangá</p>
+                            <svg id="setaDropdown" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </a>
+                        <ul>
+                            <li><a href="animes/boruto.html?manga=Boruto: Naruto Next Generations">Boruto</a></li>
+                            <li><a href="animes/onePiece.html?manga=one piece">One Piece</a></li>
+                            <li><a href="animes/dragonBall.html?manga=dragon ball">Dragon Ball</a></li>
+                            <li><a href="animes/tokioGhoul.html?manga=tokyo ghoul">Tokyo Ghoul</a></li>
+                            <li><a href="animes/jujutsuKaisen.html?manga=jujutsu kaisen">Jujutsu Kaisen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="carrossel">
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_naruto.jpg" alt="carrossel - 1">
+                <div class="legenda"><p>Naruto</p></div>
+            </div>
+    
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_dragonballsuper-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Dragon Ball Super</p></div>
+            </div>
+
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_tokyoghoul.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Tokyo Ghoul</p></div>
+            </div>
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_onepiece-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>One Piece</p></div>
+            </div>
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_jujutso-kaisen-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Jujutsu Kaisen</p></div>
+            </div>
+    
+            <a href="#" class="anterior" onclick="imagemSeta(-1)">
+                <img src="img/fotos ideias/seta-esquerda.svg" alt="anterior">
+            </a>
+            <a href="#" class="proximo" onclick="imagemSeta(1)">
+                <img src="img/fotos ideias/seta-direita.svg" alt="proximo">
+            </a>
+    
+            <div id="controleCarrossel">
+                <p id="pausar">&#10074;&#10074;</p>
+                <p id="despausar" style="display: none;">&#9654;</p>
+            </div>
+
+            <div class="caixaBotoes">
+                <span class="botao" onclick="imagemBotao(1)"></span>
+                <span class="botao" onclick="imagemBotao(2)"></span>
+                <span class="botao" onclick="imagemBotao(3)"></span>
+                <span class="botao" onclick="imagemBotao(4)"></span>
+                <span class="botao" onclick="imagemBotao(5)"></span>
+            </div>
+        </div>
+        <div id="conteudo">
+            <div class="principal">
+                <div id="apresentacao">
+                    <div id="resumo">
+                        <h2>Shueisha</h2>
+                        <p>Em japonês, nosso nome significa "coleta de intelecto", e nós da Shueisha Inc. transmitimos informações úteis, conhecimento profundo e grande entretenimento para milhões todos os
+                            dias através de muitas plataformas de comunicação. Como uma das principais editoras do Japão, nossas publicações abrangem uma ampla gama de temas e gêneros, desde revistas, literatura,
+                            arte, livros infantis e de referência, até mangás (quadrinhos/graphic novels).</p>
+                        <h2>O Mundo Em Expansão do Mangá</h2>
+                        <p>Como uma das principais editoras nacionais, Shueisha continuou a lançar uma revista popular após a outra. A revista em quadrinhos "Weekly Shonen Jump" (publicada pela primeira vez em 1968) em particular
+                            é muito popular, não só no Japão, mas também no exterior. Muitos mangás são traduzidos para vários idiomas e publicados em mais de 40 países e regiões. A principal força de Shueisha como editora
+                            são seus muitos títulos de mangá megahit. Manga tem uma enorme influência sobre a geração mais jovem, o que deve torná-los nossos leais leitores para os anos seguintes. Além disso, através
+                            da utilização de recursos de mangá na forma de filmes de animação, filmes, eventos e merchandising, bem como através da localização, esperamos que nossos negócios cheguem a todos os cantos
+                            do mundo no futuro. Nossas publicações são voltadas para o mercado interno japonês, mas muitos títulos de mangá são distribuídos ao mundo através de nossa empresa relacionada VIZ Media e
+                            outros parceiros no exterior e do aplicativo mundial MANGA Plus pela SHUEISHA.</p>
+                    </div>
+                </div>
+                <!-- <h2>Historia</h2> -->
+                <div class="linhaDoTempo">
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempoTitulo">Historia</span>
+                        <span class="anoDeGrupo tempo">1925</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao">
+                                        <span class="tempoDia">1925</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <p>Fundada como a divisão de entretenimento da editora Shogakukan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempo">1926</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao">
+                                        <span class="tempoDia">1926</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <p>Se separou de Shogakukan e tornou-se a empresa independente Shueisha em 8 de agosto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempo">1949</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao">
+                                        <span class="tempoDia">1949</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <p>Incorporada como Shueisha Inc.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="apresentacao">
+                    <div id="resumo">
+                        <h2>Shueisha</h2>
+                        <p>Aqui listarei algumas das principais revistas de mangá publicadas pela Shueisha (que ainda estão ativas) com detalhes das mesmas incluindo mangás de destaque e outras informações começando pelas revistas de
+                            demografia Shounen, indo para Seinen, Shoujo e por fim Josei. Como curiosidade, todas as revistas de mangás destinadas ao sexo masculino independente de ser Shounen ou Seinen tem Jump no nome, o que
+                            não ocorre em revistas femininas em que os nomes não possuem essa semelhança. Apesar disso, somente os mangás das revistas Shounen são parte da linha Jump Comics.</p>
+                    </div>
+                </div>
+        
+                <div class="linhaDoTempo">
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempoTitulo">Revistas</span>
+                        <span class="anoDeGrupo tempo">1963</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao tempoCartaoManga">
+                                        <span class="tempoDia">Margaret</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <div class="mangasLinhaDoTempo">
+                                        <div class="imagem">
+                                            <img src="img/sobrenos/margaret.PNG" alt="">
+                                        </div>
+                                        <div class="conteudo">
+                                            <p><strong>Frequencia: </strong> Duas edições por mês </p>
+                                            <p><strong>Demografia: </strong> Shoujo </p>
+                                            <p><strong>Criação: </strong> 1963 </p>
+                                            <p><strong>Circulação: </strong> 46,500 </p>
+                                            <p><strong>Mangás de destaque: </strong>Rosa de Versalhes, Hana Yori Dango, Orpheus no Mado, Claudine, Hirunaka no Ryuusei, Switch Girl, Hibi Chouchou, Ace o Nerae</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempo">1968</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao tempoCartaoManga">
+                                        <span class="tempoDia">Weekly Shounen Jump</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <div class="mangasLinhaDoTempo">
+                                        <div class="imagem">
+                                            <img src="img/sobrenos/weeklyShounenJump.PNG" alt="">
+                                        </div>
+                                        <div class="conteudo">
+                                            <p><strong>Frequencia: </strong> Semanal </p>
+                                            <p><strong>Demografia: </strong> Shounen </p>
+                                            <p><strong>Criação: </strong> 1968 </p>
+                                            <p><strong>Circulação: </strong> 1,915,000 </p>
+                                            <p><strong>Mangás de destaque: </strong>One Piece, Naruto, Dragon Ball, Bleach, Slam Dunk, Death Note, Kochikame, Hunter x Hunter, Gintama, Yu Yu Hakusho, Nisekoi, I”s, Hokuto no Ken, Dr Slump, Yu-Gi-Oh, Haikyuu, My Hero Academia, Assassination Classroom, Rurouni Kenshin, Saint Seiya, Captain Tsubasa, The Prince of Tennis, Kinnikuman, Sket Dance, Black Clover, Shokugeki no Soma, Saiki Kusuo no Psi-nan, Mazinger Z, Cobra, City Hunter, Rokudenashi Blues, Rookies, Shaman King, Hikaru no Go, Eyeshield 21, Kuroko no Basket, Katekyo Hitman Reborn, To Love Ru, Bakuman, Toriko</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempo">1979</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao tempoCartaoManga">
+                                        <span class="tempoDia">Weekly Young Jump</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <div class="mangasLinhaDoTempo">
+                                        <div class="imagem">
+                                            <img src="img/sobrenos/weeklyYoungJump.PNG" alt="">
+                                        </div>
+                                        <div class="conteudo">
+                                            <p><strong>Frequencia: </strong> Semanal </p>
+                                            <p><strong>Demografia: </strong> Seinen </p>
+                                            <p><strong>Criação: </strong> 1979 </p>
+                                            <p><strong>Circulação: </strong> 550,000 </p>
+                                            <p><strong>Mangás de destaque: </strong>Gantz, Tokyo Ghoul, Kingdom, Umaru-chan, Terra Formars, Elfen Lied, Liar Game, Zetman, B Gata H Kei, Golden Kamuy, Real, Kaguya-sama, Innocent</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempo">1982</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao tempoCartaoManga">
+                                        <span class="tempoDia">You</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <div class="mangasLinhaDoTempo">
+                                        <div class="imagem">
+                                            <img src="img/sobrenos/you.PNG" alt="">
+                                        </div>
+                                        <div class="conteudo">
+                                            <p><strong>Frequencia: </strong> Bimensal </p>
+                                            <p><strong>Demografia: </strong> Josei </p>
+                                            <p><strong>Criação: </strong> 1982 </p>
+                                            <p><strong>Circulação: </strong> 84,667 </p>
+                                            <p><strong>Mangás de destaque: </strong>Osomatsu-san, Gokusen, Real Clothes, Koudai-ke no Hitobito, Dame na Watashi ni Koishite Kudasai, Synchro Onchi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempo">2007</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao tempoCartaoManga">
+                                        <span class="tempoDia">Jump Square</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <div class="mangasLinhaDoTempo">
+                                        <div class="imagem">
+                                            <img src="img/sobrenos/jumpSquare.PNG" alt="">
+                                        </div>
+                                        <div class="conteudo">
+                                            <p><strong>Frequencia: </strong> Mensa </p>
+                                            <p><strong>Demografia: </strong> Shounen </p>
+                                            <p><strong>Criação: </strong> 2007 </p>
+                                            <p><strong>Circulação: </strong> 246,667 </p>
+                                            <p><strong>Mangás de destaque: </strong>Claymore, Ao no Exorcist, Rosario to Vampire Season 2, To Love Ru Darkness, New Prince of Tennis, Owari no Seraph, Tegami Bachi, Twin Star Exorcists, Binbougami Ga</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupoDeAno">
+                        <span class="anoDeGrupo tempo">2011</span>
+                        <div class="cartoesLinhaDoTempo">
+                            <div class="cartaoLinhaDoTempo cartao">
+                                <div>
+                                    <div class="tempoCartao tempoCartaoManga">
+                                        <span class="tempoDia">Grand Jump</span>
+                                    </div>
+                                </div>
+                                <div class="conteudoCartao">
+                                    <div class="mangasLinhaDoTempo">
+                                        <div class="imagem">
+                                            <img src="img/sobrenos/grandJump.PNG" alt="">
+                                        </div>
+                                        <div class="conteudo">
+                                            <p><strong>Frequencia: </strong> Duas edições por mês </p>
+                                            <p><strong>Demografia: </strong> Seinen </p>
+                                            <p><strong>Criação: </strong> 2011 </p>
+                                            <p><strong>Circulação: </strong> 181,667 </p>
+                                            <p><strong>Mangás de destaque: </strong>Bartender, Gokujyo, Dashi Master, Mankitsu, Black Tiger, Garçon, Captain Tsubasa: Rising Sun, Otome no Teikoku, Jigoku Sensei Nube Neo, Innocent Rouge, Funouhan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rodape">
+            <div id="linksRodape">
+                <p><a href="">Termos de uso</a> | <a href="">Contato</a></p>
+            </div>
+            <div id="feitoPor">
+                <p>Feito por Mauricio B. Teixeira. </p><p>&copyCopyright 2021</p>
+            </div>
+            <img src="img/logo.svg" alt="logo">
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="js/index.js"></script>

@@ -1,0 +1,246 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/fontes.css">
+    <title>Principal</title>
+</head>
+<body>
+    
+    <div id="principal">
+        <div id="header">
+            <div id="menuAtivo">&#9776;</div>
+            <a id="logoMenu" href="index.html">
+                <img src="img/logo.svg" alt="logo" id="logo">
+            </a>
+            <nav class="nav-menu">
+                <div id="menuDesativa">X</div>
+                <ul>
+                    <li><a href="sobrenos.html">Sobre nós</a></li>
+                    <li><a href="loja.html">Loja</a></li>
+                    <li class="subgrupo">
+                        <a href="javascript:">
+                            <p class="mangaMenu">Mangá</p>
+                            <svg id="setaDropdown" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </a>
+                        <ul>
+                            <li><a href="animes/boruto.html?manga=Boruto: Naruto Next Generations">Boruto</a></li>
+                            <li><a href="animes/onePiece.html?manga=one piece">One Piece</a></li>
+                            <li><a href="animes/dragonBall.html?manga=dragon ball">Dragon Ball</a></li>
+                            <li><a href="animes/tokioGhoul.html?manga=tokyo ghoul">Tokyo Ghoul</a></li>
+                            <li><a href="animes/jujutsuKaisen.html?manga=jujutsu kaisen">Jujutsu Kaisen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="carrossel">
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_naruto.jpg" alt="carrossel - 1">
+                <div class="legenda"><p>Naruto</p></div>
+            </div>
+    
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_dragonballsuper-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Dragon Ball Super</p></div>
+            </div>
+
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_tokyoghoul.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Tokyo Ghoul</p></div>
+            </div>
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_onepiece-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>One Piece</p></div>
+            </div>
+            <div class="tela">
+                <img src="img/fotos ideias/carrossel/wallpaper_jujutso-kaisen-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Jujutsu Kaisen</p></div>
+            </div>
+    
+            <a href="#" class="anterior" onclick="imagemSeta(-1)">
+                <img src="img/fotos ideias/seta-esquerda.svg" alt="anterior">
+            </a>
+            <a href="#" class="proximo" onclick="imagemSeta(1)">
+                <img src="img/fotos ideias/seta-direita.svg" alt="proximo">
+            </a>
+
+            <div id="controleCarrossel">
+                <p id="pausar">&#10074;&#10074;</p>
+                <p id="despausar" style="display: none;">&#9654;</p>
+            </div>
+
+            <div class="caixaBotoes">
+                <span class="botao" onclick="imagemBotao(1)"></span>
+                <span class="botao" onclick="imagemBotao(2)"></span>
+                <span class="botao" onclick="imagemBotao(3)"></span>
+                <span class="botao" onclick="imagemBotao(4)"></span>
+                <span class="botao" onclick="imagemBotao(5)"></span>
+            </div>
+        </div>
+        <div id="conteudo">
+            <div id="homeFeed">
+                <div class="titulo">
+                    <h2>Ultimos Lançamentos</h2>
+                </div>
+                <div class="principal-cartoes">
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/Tokio Ghoul/Capa-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>Tokio Ghoul</p>
+                                <p>#123</p>
+                                <p>20/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/tokioGhoul.html?manga=tokyo ghoul">Sobre este manga</a>
+                        </div>
+                    </div>
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/One Piece/One Piece re-edition-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>One Piece re-edition</p>
+                                <p>#114</p>
+                                <p>20/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/onePiece.html?manga=one piece">Sobre este manga</a>
+                        </div>
+                    </div>
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/Boruto/Naruto Next Generations-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>Boruto: Naruto Next Generations</p>
+                                <p>#057</p>
+                                <p>19/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/boruto.html?manga=Boruto: Naruto Next Generations">Sobre este manga</a>
+                        </div>
+                    </div>
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/Dragon Ball/Dragon Ball Super-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>Dragon Ball Super</p>
+                                <p>#071</p>
+                                <p>19/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/dragonBall.html?manga=dragon ball">Sobre este manga</a>
+                        </div>
+                    </div>
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/Jujutsu Kaisen/Jujutsu Kaisen-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>Jujutsu Kaisen</p>
+                                <p>#146</p>
+                                <p>17/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/jujutsuKaisen.html?manga=jujutsu kaisen">Sobre este manga</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="titulo">
+                    <h2>Mais Curtidos</h2>
+                </div>
+                <div class="principal-cartoes">
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/Boruto/Naruto Next Generations-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>Boruto: Naruto Next Generations</p>
+                                <p>#057</p>
+                                <p>19/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/boruto.html?manga=Boruto: Naruto Next Generations">Sobre este manga</a>
+                        </div>
+                    </div>
+
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/Jujutsu Kaisen/Jujutsu Kaisen-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>Jujutsu Kaisen</p>
+                                <p>#146</p>
+                                <p>17/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/jujutsuKaisen.html?manga=jujutsu kaisen">Sobre este manga</a>
+                        </div>
+                    </div>
+
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/One Piece/One Piece re-edition-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>One Piece re-edition</p>
+                                <p>#114</p>
+                                <p>20/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/onePiece.html?manga=one piece">Sobre este manga</a>
+                        </div>
+                    </div>
+
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/Dragon Ball/Dragon Ball Super-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>Dragon Ball Super</p>
+                                <p>#071</p>
+                                <p>19/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/dragonBall.html?manga=dragon ball">Sobre este manga</a>
+                        </div>
+                    </div>
+
+                    <div class="cartao-retina">
+                        <div class="visivel">
+                            <img src="img/Tokio Ghoul/Capa-1.jpg" alt="Hover Zoom CSS3" />
+                            <div class="conteudo-visivel">
+                                <p>Tokio Ghoul</p>
+                                <p>#123</p>
+                                <p>20/04/2021</p>
+                            </div>
+                        </div>
+                        <div class="retina">
+                            <a href="animes/tokioGhoul.html?manga=tokyo ghoul">Sobre este manga</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rodape">
+            <div id="linksRodape">
+                <p><a href="">Termos de uso</a> | <a href="">Contato</a></p>
+            </div>
+            <div id="feitoPor">
+                <p>Feito por Mauricio B. Teixeira. </p><p>&copyCopyright 2021</p>
+            </div>
+            <img src="img/logo.svg" alt="logo">
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="js/index.js"></script>

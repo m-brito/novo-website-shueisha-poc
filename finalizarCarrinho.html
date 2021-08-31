@@ -1,0 +1,125 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/finalizarCarrinho.css">
+    <link rel="stylesheet" href="css/fontes.css">
+    <title>Finalizar Compra</title>
+</head>
+<body>
+    
+    <div id="principal">
+        <div id="header">
+            <div id="menuAtivo">&#9776;</div>
+            <a id="logoMenu" href="index.html">
+                <img src="img/logo.svg" alt="logo" id="logo">
+            </a>
+            <nav class="nav-menu">
+                <div id="menuDesativa">X</div>
+                <ul>
+                    <li><a href="sobrenos.html">Sobre nós</a></li>
+                    <li><a href="loja.html">Loja</a></li>
+                    <li class="subgrupo">
+                        <a href="javascript:">
+                            <p class="mangaMenu">Mangá</p>
+                            <svg id="setaDropdown" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </a>
+                        <ul>
+                            <li><a href="animes/boruto.html?manga=Boruto: Naruto Next Generations">Boruto</a></li>
+                            <li><a href="animes/onePiece.html?manga=one piece">One Piece</a></li>
+                            <li><a href="animes/dragonBall.html?manga=dragon ball">Dragon Ball</a></li>
+                            <li><a href="animes/tokioGhoul.html?manga=tokyo ghoul">Tokyo Ghoul</a></li>
+                            <li><a href="animes/jujutsuKaisen.html?manga=jujutsu kaisen">Jujutsu Kaisen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="conteudo">
+            <div id="homeFeed">
+                <div class="titulo">
+                    <h2>Finalizar Compra</h2>
+                </div>
+                <div id="formularioEndereco">
+                    <form id="formulario">
+                        <h1>Dados de entrega</h1>
+                        <p>Seus dados serão lembrados!!!</p>
+                        <div>
+                            <label for="nome">Nome: *</label>
+                            <input type="text" name="nome" id="nome" placeholder="Informe o nome" required onblur="validaCampo(this)">
+                        </div>
+                        <div>
+                            <label for="numero">Telefone: *</label>
+                            <input type="number" name="telefone" id="telefone" placeholder="Informe o telefone" required onblur="validaCampo(this)">
+                        </div>
+                        <div>
+                            <label for="rua">Rua: *</label>
+                            <input type="text" name="rua" id="rua" placeholder="Informe o nome da rua" required onblur="validaCampo(this)">
+                        </div>
+                        <div class="grupoInput">
+                            <div>
+                                <label for="bairro">Bairro: *</label>
+                                <input type="text" name="bairro" id="bairro" placeholder="Informe o nome do bairro" required onblur="validaCampo(this)">
+                            </div>
+                            <div>
+                                <label for="numero">Número: *</label>
+                                <input type="number" name="numero" id="numero" placeholder="Informe o numero da casa" required onblur="validaCampo(this)">
+                            </div>
+                        </div>
+                        <div class="grupoInput">
+                            <div>
+                                <label for="estado">Estado: *</label>
+                                <Select name="estado" id="estado" required onblur="validaCampo(this)"></Select>
+                            </div>
+                            <div>
+                                <label for="cidade">Cidade: *</label>
+                                <Select name="cidade" id="cidade" disabled required onblur="validaCampo(this)"></Select>
+                            </div>
+                        </div>
+                        <p id="carregando">Carregando...</p>
+                        <input type="submit" value="Salvar">
+                    </form>
+                </div>
+                <div id="boleto">
+                    <div id="conteudoBoleto">
+                        <h1>Opções de envio</h1>
+                        <div id="enderecoBoleto">
+                            <div class="cartaoEndereco">
+                                <img src="img/localizacao.png">
+                                <div class="dadosEndereco">
+                                    
+                                </div>
+                                <div class="ferramentasEndereco">
+                                    <img src="img/iconeEditar.png" alt="editar">
+                                </div>
+                            </div>
+                        </div>
+                        <h1>Itens</h1>
+                        <div id="itensBoleto">
+                        </div>
+                    </div>
+                    <div id="resumoBoleto">
+                        <h1>Resumo</h1>
+                        <div id="conteudoResumo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rodape">
+            <div id="linksRodape">
+                <p><a href="">Termos de uso</a> | <a href="">Contato</a></p>
+            </div>
+            <div id="feitoPor">
+                <p>Feito por Mauricio B. Teixeira. </p><p>&copyCopyright 2021</p>
+            </div>
+            <img src="img/logo.svg" alt="logo">
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="js/finalizarCarrinho.js"></script>

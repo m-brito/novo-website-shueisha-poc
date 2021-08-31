@@ -1,0 +1,139 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/geral.css">
+    <link rel="stylesheet" href="../css/aniimes.css">
+    <link rel="stylesheet" href="../css/fontes.css">
+    <title>Tokio Ghoul</title>
+    <script src="../js/animes.js"></script>
+</head>
+<body>
+    <div id="principal">
+        <div id="header">
+            <div id="menuAtivo">&#9776;</div>
+            <a id="logoMenu" href="../index.html">
+                <img src="../img/logo.svg" alt="logo" id="logo">
+            </a>
+            <nav class="nav-menu">
+                <div id="menuDesativa">X</div>
+                <ul>
+                    <li><a href="../sobrenos.html">Sobre nós</a></li>
+                    <li><a href="../loja.html">Loja</a></li>
+                    <li class="subgrupo">
+                        <a href="javascript:">
+                            <p class="mangaMenu">Mangá</p>
+                            <svg id="setaDropdown" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </a>
+                        <ul>
+                            <li><a href="../animes/boruto.html?manga=Boruto: Naruto Next Generations">Boruto</a></li>
+                            <li><a href="../animes/onePiece.html?manga=one piece">One Piece</a></li>
+                            <li><a href="../animes/dragonBall.html?manga=dragon ball">Dragon Ball</a></li>
+                            <li><a href="../animes/tokioGhoul.html?manga=tokyo ghoul">Tokyo Ghoul</a></li>
+                            <li><a href="../animes/jujutsuKaisen.html?manga=jujutsu kaisen">Jujutsu Kaisen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="carrossel">
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_naruto.jpg" alt="carrossel - 1">
+                <div class="legenda"><p>Naruto</p></div>
+            </div>
+    
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_dragonballsuper-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Dragon Ball Super</p></div>
+            </div>
+
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_tokyoghoul.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Tokyo Ghoul</p></div>
+            </div>
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_onepiece-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>One Piece</p></div>
+            </div>
+            <div class="tela">
+                <img src="../img/fotos ideias/carrossel/wallpaper_jujutso-kaisen-2.jpg" alt="carrossel - 2">
+                <div class="legenda"><p>Jujutsu Kaisen</p></div>
+            </div>
+    
+            <a href="#" class="anterior" onclick="imagemSeta(-1)">
+                <img src="../img/fotos ideias/seta-esquerda.svg" alt="anterior">
+            </a>
+            <a href="#" class="proximo" onclick="imagemSeta(1)">
+                <img src="../img/fotos ideias/seta-direita.svg" alt="proximo">
+            </a>
+    
+            <div id="controleCarrossel">
+                <p id="pausar">&#10074;&#10074;</p>
+                <p id="despausar" style="display: none;">&#9654;</p>
+            </div>
+
+            <div class="caixaBotoes">
+                <span class="botao" onclick="imagemBotao(1)"></span>
+                <span class="botao" onclick="imagemBotao(2)"></span>
+                <span class="botao" onclick="imagemBotao(3)"></span>
+                <span class="botao" onclick="imagemBotao(4)"></span>
+                <span class="botao" onclick="imagemBotao(5)"></span>
+            </div>
+        </div>
+        <div id="conteudo">
+            <div id="apresentacaoAnime">
+                <img src="../img/Tokio Ghoul/Capa-1.jpg" alt="Tokio Ghoul">
+                <div id="resumo">
+                    <h2>Tokyo Ghoul</h2>
+                    <p>O tímido Ken Kaneki está entusiasmado por sair com o belo Rize. Mas acontece que ela só está interessada no corpo dele. Quando um resgate moralmente questionável o transforma no primeiro híbrido meio-humano meio-humano, Ken é atraído para o mundo sombrio e violento de Ghouls, que existe ao lado do nosso.</p>
+                </div>
+            </div>
+            <div id="compartilharPagina"></div>
+            <div id="mangaPlus">
+                <h1>Mangá Plus</h1>
+                <a href="https://mangaplus.shueisha.co.jp/viewer/1000601" target="blank_">
+                    <img src="../img/Tokio Ghoul/Manga/001.jpg" alt="">
+                    <div id="conteudoMangaPlus">
+                        <p>001 - Tragédia</p>
+                        <p id="dataMangaPlus">20/01/2019</p>
+                    </div>
+                </a>
+                <a href="https://mangaplus.shueisha.co.jp/viewer/1000602" target="blank_">
+                    <img src="../img/Tokio Ghoul/Manga/002.jpg" alt="">
+                    <div id="conteudoMangaPlus">
+                        <p>002 - 2: Curiosidade</p>
+                        <p id="dataMangaPlus">20/01/2019</p>
+                    </div>
+                </a>
+                <a href="https://mangaplus.shueisha.co.jp/viewer/1000603" target="blank_">
+                    <img src="../img/Tokio Ghoul/Manga/003.jpg" alt="">
+                    <div id="conteudoMangaPlus">
+                        <p>003 - 3: Pior</p>
+                        <p id="dataMangaPlus">20/01/2019</p>
+                    </div>
+                </a>
+            </div>
+            <div id="personagens">
+                <img src="../img/carregando.gif" id="carregando" alt="carregando">
+            </div>
+            <div id="mediasManga"></div>
+            <div id="outrosSobreManga">
+                <img src="../img/carregando.gif" id="carregando" alt="carregando">
+            </div>
+        </div>
+        <div id="rodape">
+            <div id="linksRodape">
+                <p><a href="">Termos de uso</a> | <a href="">Contato</a></p>
+            </div>
+            <div id="feitoPor">
+                <p>Feito por Mauricio B. Teixeira. </p><p>&copyCopyright 2021</p>
+            </div>
+            <img src="../img/logo.svg" alt="logo">
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../js/index.js"></script>
