@@ -1,3 +1,5 @@
+/* =============Cartoes da loja================== */
+
 .cartaoProduto{
     box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.3);
     height: auto;
@@ -38,6 +40,9 @@
     font-size: 22px;
     color: #6fc5e9;
 }
+
+
+/* ==================Botao de carrinho============================== */
 .carrinho{
     position: absolute;
     top: 5px;
@@ -51,6 +56,8 @@
     z-index: 20;
     border-radius: 10px;
 }
+
+/* ===================================Botao excluir item de carrinho============= */
 .excluirCarrinho{
     position: absolute;
     top: 5px;
@@ -67,6 +74,8 @@
 .cartaoProduto:hover .carrinho, .cartaoProduto:hover .excluirCarrinho{
     display: flex;
 }
+
+/* ==================Botao de carrinho============================== */
 #carrinhoCompras{
     position: fixed;
     bottom: 10px;
@@ -80,6 +89,8 @@
     width: 100px;
     animation: carrinho 1s infinite alternate;
 }
+
+/* =============================Animacao botao carrinho ======================= */
 @keyframes carrinho {
     from {
       transform: translatex(10px);
@@ -88,6 +99,8 @@
       transform: translatex(-10px);
     }
   }
+
+  /* ========================Div de produtos no carrinho de compras======================== */
 #telaCarrinhoCompras{
     border: 2px solid #494949;
     position: fixed;
@@ -102,6 +115,9 @@
     display: none;
     padding: 0 10px;
 }
+
+
+/* ============================Sessao Principal da pagina=================== */
 #principal{
     display: flex;
     flex-direction: column;
@@ -113,6 +129,7 @@
     display: none;
     font-size: 30px;
 }
+/* =====================Botao voltar para loja compra================= */
 #voltarLoja{
     position: absolute;
     top: 0px;
@@ -128,6 +145,7 @@
     cursor: pointer;
     z-index: 10;
 }
+/* =====================Botao finalizar compra================= */
 #finalizar{
     position: absolute;
     top: 0px;
@@ -143,6 +161,8 @@
     cursor: pointer;
     z-index: 10;
 }
+
+/* ========================Estilizacao de scroll===================== */
 #telaCarrinhoCompras::-webkit-scrollbar-track {
     background-color: #F4F4F4;
     border-radius: 20px;

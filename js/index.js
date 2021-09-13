@@ -1,3 +1,5 @@
+// ===================Operacoes para responsividade de menu==============
+
 document.getElementById("menuAtivo").addEventListener("click", function(){
     document.querySelector("nav").classList.add("menuAtivoNav")
     document.querySelector("#conteudo").classList.add("menuAbertoOpacidade")
@@ -15,6 +17,8 @@ document.getElementById("menuDesativa").addEventListener("click", function(){
 
 var carrosselPausado = false;
 
+// =================Funcoes para controle de carrossel====================
+
 document.querySelector("#controleCarrossel").addEventListener("click", () => {
     if(carrosselPausado==false) {
         carrosselPausado = true;
@@ -27,11 +31,15 @@ document.querySelector("#controleCarrossel").addEventListener("click", () => {
     }
 })
 
+// ============================Passar imagem do carrossel a cada segundo================
+
 setInterval(() => {
     if(carrosselPausado==false) {
         imagemSeta(1);
     }
 }, 5000);
+
+// =======================CARROSSEL========================
 
 var indiceImagem = 1;
 mostrarImagem(indiceImagem);

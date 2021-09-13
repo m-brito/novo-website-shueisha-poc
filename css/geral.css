@@ -296,6 +296,8 @@ body{
     opacity: 0.2;
 }
 
+/* ===============Responsividade============= */
+
 @media(max-width: 790px){
     #header a#logoMenu{
         margin-right: 5%;

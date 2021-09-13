@@ -98,6 +98,8 @@ body{
     flex-wrap: nowrap;
 }
 
+/* =======================Linha do tempo====================== */
+
 .linhaDoTempo{
     /* margin: 40px; */
     border-left: 3px solid var(--corLinha);
@@ -133,6 +135,8 @@ body{
     width: 300px;
     font-size: 40px;
 }
+
+/* ======================Cartoes linha do tempo=================== */
 
 .cartoesLinhaDoTempo{
     position: relative;
@@ -216,6 +220,8 @@ p.comentarios{
     max-width: none !important;
     text-align: center;
 }
+
+/* ============RESPONSIVIDADE================ */
 
 @media(max-width: 1000px) {
     .mangasLinhaDoTempo{

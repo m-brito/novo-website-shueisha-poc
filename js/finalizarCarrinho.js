@@ -1,11 +1,16 @@
+// ==============Dados caso de erro na requisicao====================
+
 var listaEmergencia = [{"id":32,"image":"https://m.media-amazon.com/images/I/51q654bcafL.jpg","name":"Boruto Uzumaki: Funk o Pop! Vinyl Figure Bundle with 1 Compatible 'ToysDiva' Graphic Protector (671 - 45428 - B)","price":"29.98","url":"https://www.amazon.com/Boruto-Uzumaki-Compatible-ToysDiva-Protector/dp/B0857JQKFP/ref=sr_1_31?dchild=1&keywords=Funko+Boruto&qid=1629074051&sr=8-31","stars":"4.8"}, {"id":65,"image":"https://m.media-amazon.com/images/I/81MGKtXpdRL.jpg","name":"Chainsaw Man, Vol. 6 (6)","price":"9.99","url":"https://www.amazon.com/Chainsaw-Man-Vol-Tatsuki-Fujimoto/dp/1974720713/ref=sxin_12_birs_cobar_search?cv_ct_cx=Manga+Jujutsu+Kaisen&dchild=1&keywords=Manga+Jujutsu+Kaisen&pd_rd_i=1974720713&pd_rd_r=93a25ad9-42c4-4702-837a-534f78b5df63&pd_rd_w=AfJAp&pd_rd_wg=pLwag&pf_rd_p=2dcc5ab4-7d6f-401b-8ebf-0aecdf148e16&pf_rd_r=WCF7NT7PXC7HF7PGVEC1&qid=1629074201&sr=1-1-99af414c-1b7d-42c2-a92c-89941e88149f","stars":"4.9"},
 {"id":57,"image":"https://m.media-amazon.com/images/I/91V9j2oQ9eL.jpg","name":"Jujutsu Kaisen 0: Blinding Darkness","price":"6.29","url":"https://www.amazon.com/Jujutsu-Kaisen-0-Blinding-Darkness-ebook/dp/B08R6QQ91L/ref=sr_1_11?dchild=1&keywords=Manga+Jujutsu+Kaisen&qid=1629074201&sr=8-11","stars":"4.9"}];
 
+// ========================variaveis globais===================
 var loja = [];
 var carrinho = ["0"];
 var totalReal = 0;
 var totalDolar = 0;
 
+
+// =================================Operacoes menu responsivo==================
 document.querySelector("#menuAtivo").addEventListener("click", function(){
     document.querySelector("nav").classList.add("menuAtivoNav")
     document.querySelector("#conteudo").classList.add("menuAbertoOpacidade")
@@ -19,6 +24,10 @@ document.getElementById("menuDesativa").addEventListener("click", function(){
     document.querySelector("#menuDesativa").classList.remove("botaoMenuDesativaAtivado")
 })
 
+// ======================================LOJA=================================
+
+
+// ==============Pegar produtos ou se der erro mostrar produtos da 'lista de emergencia' que estao no carrinho================
 async function produtosLoja() {
     const resp = await fetch(`https://pjtoapis.000webhostapp.com/classes/todosprodutos.php`, {
         "method": "GET",
@@ -88,17 +97,15 @@ async function produtosLoja() {
             document.cookie = 'lojaLista=0';
             window.open(`http://www.sicadi.com.br/mhouse/boleto/boleto3.php?numero_banco=341-7&local_pagamento=PAG%C1VEL+EM+QUALQUER+BANCO+AT%C9+O+VENCIMENTO&cedente=Shueisha&data_documento=${dia}%2F${mes}%2F${ano}&numero_documento=DF+00113&especie=&aceite=N&data_processamento=${dia}%2F${mes}%2F${ano}&uso_banco=&carteira=179&especie_moeda=Real&quantidade=${carrinho.length-1}&valor=&vencimento=${diaVencimento}%2F${mes}%2F${ano}&agencia=0049&codigo_cedente=10201-5&meunumero=00010435&valor_documento=${totalReal.toFixed(2)}&instrucoes=Taxa+de+visita+de+suporte%0D%0AAp%F3s+o+vencimento+R%+0%2C80+ao+dia&mensagem1=&mensagem2=&mensagem3=ATEN%C7%C3O%3A+N%C3O+RECEBER+AP%D3S+15+DIAS+DO+VENCIMENTO&sacado=&Submit=Enviar`, '_blank');
             location.reload();
-            // window.location = (`http://www.sicadi.com.br/mhouse/boleto/boleto3.php?numero_banco=341-7&local_pagamento=PAG%C1VEL+EM+QUALQUER+BANCO+AT%C9+O+VENCIMENTO&cedente=Shueisha&data_documento=${dia}%2F${mes}%2F${ano}&numero_documento=DF+00113&especie=&aceite=N&data_processamento=${dia}%2F${mes}%2F${ano}&uso_banco=&carteira=179&especie_moeda=Real&quantidade=${carrinho.length-1}&valor=&vencimento=${diaVencimento}%2F${mes}%2F${ano}&agencia=0049&codigo_cedente=10201-5&meunumero=00010435&valor_documento=${totalReal.toFixed(2)}&instrucoes=Taxa+de+visita+de+suporte%0D%0AAp%F3s+o+vencimento+R%+0%2C80+ao+dia&mensagem1=&mensagem2=&mensagem3=ATEN%C7%C3O%3A+N%C3O+RECEBER+AP%D3S+15+DIAS+DO+VENCIMENTO&sacado=&Submit=Enviar`);
         });
-        // document.querySelector("#telaCarrinhoCompras").innerHTML="<h1>Estamos com problemas nesta ferramenta <br> por favor tente mais tarde!!</h1>";
-        // alert("Ocorreu um erro vamos recarregar a pagina!")
-        // location.reload();
     })
     
     const data = await resp.json()
     // const result = await data.results
     return data;
 }
+
+// =================Pegar um dado especifico dos cookies========================
 
 function pegarDadoCookie(cname) {
     let name = cname + "=";
@@ -116,6 +123,8 @@ function pegarDadoCookie(cname) {
     return "";
 }
 
+// ====================atualizar/sincronizar dados dos cookies e carrinho=================
+
 function atualizaCarrinho(){
     var carrinhoLista = pegarDadoCookie("lojaLista").split("-");
     if(carrinhoLista[0]!="" || carrinhoLista.length>1) {
@@ -125,6 +134,8 @@ function atualizaCarrinho(){
     }
 }
 
+
+// ===========================Mostrar dados do 'boleto' na pagina==================
 async function imprimirDados() {
     totalReal = 0;
     totalDolar = 0;
@@ -205,9 +216,13 @@ async function imprimirDados() {
     });
 }
 
+// =====================Adiciona a classe 'valida' no campo para estilizacao caso campo seja valido ou invalido=================
+
 function validaCampo(e){
     document.getElementById(e.id).classList.add("valida");
 }
+
+// ====================Popula o campo select de estado quando for editar, usando API do IBGE==================
 
 async function popularEstadosEditar(idSelecionado) {
     const estadoSelect = document.querySelector("select[name=estado]")
@@ -222,6 +237,8 @@ async function popularEstadosEditar(idSelecionado) {
         }
     })
 }
+
+// ====================Popula o campo select de cidade quando for editar, usando API do IBGE==================
 
 function populaCidadesEditar(nomeCidade) {
     var estadoSelecionado = document.querySelector("[name=estado]").value;
@@ -250,6 +267,8 @@ function populaCidadesEditar(nomeCidade) {
     })
 }
 
+// ====================Popula o campo select de estado, usando API do IBGE==================
+
 async function popularEstados() {
     const estadoSelect = document.querySelector("select[name=estado]")
     estadoSelect.innerHTML = "";
@@ -260,6 +279,8 @@ async function popularEstados() {
         populaCidades();
     })
 }
+
+// ====================Popula o campo select de cidade, usando API do IBGE==================
 
 function populaCidades() {
     var estadoSelecionado = document.querySelector("[name=estado]").value;
@@ -284,6 +305,8 @@ function populaCidades() {
     } )
 }
 
+// ====================Preenche campos do formulario de acordo com dados salvos em cookies=======================
+
 async function preencherFormularioEditar() {
     const nome = pegarDadoCookie("nome");
     const telefone = pegarDadoCookie("telefone");
@@ -304,11 +327,14 @@ async function preencherFormularioEditar() {
     document.querySelector("[name=numero]").value = numero;
 }
 
+// =======================adicionando ouvidor de eventos no botao para editar dados de entreg=======================
+
 document.querySelector(".ferramentasEndereco").addEventListener("click", () => {
     document.getElementById("formularioEndereco").style.display = "flex";
     preencherFormularioEditar()
 })
 
+// ========================Ouvidor de submit do formulario ===============================
 document.querySelector("form").addEventListener("submit", (event) => {
     document.getElementById("formularioEndereco").style.display = "none";
     const nome = document.getElementById("nome").value;
@@ -332,6 +358,8 @@ document.querySelector("form").addEventListener("submit", (event) => {
 
     dadosJaCadastrados()
 });
+
+// ================Preenche campos da pagina que estao salvos em cookies=======================
 
 function dadosJaCadastrados() {
     const nome = pegarDadoCookie("nome");

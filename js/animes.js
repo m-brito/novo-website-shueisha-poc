@@ -1,92 +1,22 @@
 var manga = parametroDoUrl("manga");
 mostrarMangas()
-// document.cookie = "username=John Dasdfasdfoe";
-// salvar em cookie;
 
-function urlParaCompartilhar() {
-    var url = "https://mauricio-projeto.netlify.app/animes/"+window.location.href.split("/animes/")[1];
-    var botoes = `
-    <div id="whatsapp">
-        <img src="../img/whatsapp.jpg" alt="whatsapp">
-        <p>Compartilhar</p>
-    </div>
-    <div id="twitter">
-        <img src="../img/twitter.png" alt="whatsapp">
-        <p>Compartilhar</p>
-    </div>`
-    document.getElementById("compartilharPagina").innerHTML = botoes;
-    document.getElementById("whatsapp").addEventListener("click", (e) => {
-        window.open(`https://api.whatsapp.com/send?text=Olá venha conferir tudo sobre ${decodeURI(manga)}!!! disponivel em: ${encodeURI(url)} &via=ProjetoMauricio&hashtags=${decodeURI(manga).split(" ").join("")}`,"_blank");
-    })
-    document.getElementById("twitter").addEventListener("click", (e) => {
-        window.open(`https://twitter.com/intent/tweet?&text=Olá venha conferir tudo sobre ${decodeURI(manga)}!!! disponivel em: ${encodeURI(url)} &via=ProjetoMauricio&hashtags=${decodeURI(manga).split(" ").join("")}`,"_blank");
-    })
-}
+// =================================MIDIAS======================
 
-function parametroDoUrl(parametro) {
-    var url = location.search.substring(1, location.search.length);
-    var valorParametro = false;
-    var parametros = url.split("&");
-    for (i=0; i<parametros.length;i++) {
-        nomeParametro = parametros[i].substring(0,parametros[i].indexOf('='));
-        if (nomeParametro == parametro) {
-            valorParametro = parametros[i].substring(parametros[i].indexOf('=')+1)
-        }
-    }
-    if (valorParametro) {
-        return valorParametro;
-    }
-    else {
-        return undefined;
-    }
-}
 
-async function pegarMangaUrl(){
-    const resp = await fetch(`https://jikan1.p.rapidapi.com/search/manga?q=${manga}`, {
+// =============================API=======================
+async function musicaYoutube(pesquisa) {
+    const resp = await fetch(`https://simple-youtube-search.p.rapidapi.com/search?query=rap%20do%20${pesquisa}%20Portugues-br&type=video&safesearch=false`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
-            "x-rapidapi-host": "jikan1.p.rapidapi.com"
+            "x-rapidapi-host": "simple-youtube-search.p.rapidapi.com",
+		    "x-rapidapi-key": "d7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc"
         }}
     )
-    const data = await resp.json()
-    const result = await data.results
-    return result;
+    const data = await resp.json();
+    return data.results;
 }
 
-async function pegarPersonagens(id) {
-    const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${id}/characters`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
-            "x-rapidapi-host": "jikan1.p.rapidapi.com"
-        }}
-    )
-    const data = await resp.json()
-    // console.log(data)
-    if(data.message){
-        return {
-            erro: data.error,
-            resp: data
-        }
-    } else {
-        // console.log(data)
-        return {
-            erro: false,
-            resp: data.characters
-        }
-    }
-    // const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${id}/characters`, {
-    //     "method": "GET",
-    //     "headers": {
-    //         "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
-    //         "x-rapidapi-host": "jikan1.p.rapidapi.com"
-    //     }}
-    // ).catch(function(erro) {
-    //     console.log(erro)
-    // })
-    
-}
 async function musicasManga(nome) {
     const resp = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${nome}`, {
         "method": "GET",
@@ -99,16 +29,29 @@ async function musicasManga(nome) {
     return data;
 }
 
-async function newsManga(paramId) {
-    const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${paramId}/news`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
-            "x-rapidapi-host": "jikan1.p.rapidapi.com"
-        }}
-    )
-    const data = await resp.json();
-    return data.articles;
+// ================================Mostrar Midias na tela===============
+
+async function preencherMusicasYoutube(nomePesquisa) {
+    document.getElementById("mediasMangaYoutube").innerHTML = "";
+    var tam = 6;
+    data = await musicaYoutube(nomePesquisa);
+    if(data.length<6){tam = data.length}
+    for(let x=0; x<tam; x++) {
+        // data.data.length
+        cartao = `
+            <div class="cartaoMusicaYoutube">
+                <div class="divVideo">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/${data[x].id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="conteudoOutrosVideo">
+                    <h2 class="comentarios">${data[x].title}</h2>
+                    <p class="comentarios">${data[x].uploadedAt}</p>
+                    <p class="comentarios">${data[x].views} visualizações</p>
+                </div>
+            </div>
+        `;
+        document.getElementById("mediasMangaYoutube").innerHTML += cartao;
+    }
 }
 
 async function preencherMusicas(personagem) {
@@ -154,77 +97,29 @@ function maisMidias(campo) {
     preencherMusicasYoutube(manga)
 }
 
-function mostrarPersonagens(personagensManga) {
-    document.getElementById("personagens").innerHTML="<h1>Personagens Principais</h1>";
-    for(let a=0; a<personagensManga.length; a++) {
-        if(personagensManga[a].role=="Main") {
-            document.getElementById("personagens").innerHTML+=`
-                <a href="${personagensManga[a].url}" target="blank_">
-                    <div class="imagemCartao">
-                        <img src="${personagensManga[a].image_url}" alt="personagem">
-                    </div>
-                    <div class="conteudoCartao">
-                        <h2>${personagensManga[a].name}</h2>
-                        <p>${personagensManga[a].role}</p>
-                        <p>Saiba mais!!!</p>
-                    </div>
-                </a>
-            `
-        }
-    }
-}
-async function mostrarOutrasNoticias(noticias) {
-    document.getElementById("outrosSobreManga").innerHTML = "<h1>Relacionado</h1><div id='conteudoCartoesOutros'>";
-    for(let x=0; x<10; x++) {
-        document.getElementById("conteudoCartoesOutros").innerHTML+=`
-        <div class="cartaoOutros">
-            <div class="divOutrosImagem">
-                <img src="${noticias[x].image_url}" alt="${noticias[x].title}">
-            </div>
-            <div class="conteudoOutros">
-                <h2>${noticias[x].title}</h2>
-                <p>${noticias[x].intro}</p> <br>
-                <p class="comentarios"><strong>Comentarios:</strong> ${noticias[x].comments}</p>
-            </div>
-            <a href="${noticias[x].url}" style="text-align: center;" target="blank_">Mais Sobre</a>
-        </div>
-    `}
+// ============================================COMPARTILHAMENTO=======
+
+function urlParaCompartilhar() {
+    var url = "https://mauricio-projeto.netlify.app/animes/"+window.location.href.split("/animes/")[1];
+    var botoes = `
+    <div id="whatsapp">
+        <img src="../img/whatsapp.jpg" alt="whatsapp">
+        <p>Compartilhar</p>
+    </div>
+    <div id="twitter">
+        <img src="../img/twitter.png" alt="whatsapp">
+        <p>Compartilhar</p>
+    </div>`
+    document.getElementById("compartilharPagina").innerHTML = botoes;
+    document.getElementById("whatsapp").addEventListener("click", (e) => {
+        window.open(`https://api.whatsapp.com/send?text=Olá venha conferir tudo sobre ${decodeURI(manga)}!!! disponivel em: ${encodeURI(url)} &via=ProjetoMauricio&hashtags=${decodeURI(manga).split(" ").join("")}`,"_blank");
+    })
+    document.getElementById("twitter").addEventListener("click", (e) => {
+        window.open(`https://twitter.com/intent/tweet?&text=Olá venha conferir tudo sobre ${decodeURI(manga)}!!! disponivel em: ${encodeURI(url)} &via=ProjetoMauricio&hashtags=${decodeURI(manga).split(" ").join("")}`,"_blank");
+    })
 }
 
-async function musicaYoutube(pesquisa) {
-    const resp = await fetch(`https://simple-youtube-search.p.rapidapi.com/search?query=rap%20do%20${pesquisa}%20Portugues-br&type=video&safesearch=false`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "simple-youtube-search.p.rapidapi.com",
-		    "x-rapidapi-key": "d7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc"
-        }}
-    )
-    const data = await resp.json();
-    return data.results;
-}
-
-async function preencherMusicasYoutube(nomePesquisa) {
-    document.getElementById("mediasMangaYoutube").innerHTML = "";
-    var tam = 6;
-    data = await musicaYoutube(nomePesquisa);
-    if(data.length<6){tam = data.length}
-    for(let x=0; x<tam; x++) {
-        // data.data.length
-        cartao = `
-            <div class="cartaoMusicaYoutube">
-                <div class="divVideo">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/${data[x].id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="conteudoOutrosVideo">
-                    <h2 class="comentarios">${data[x].title}</h2>
-                    <p class="comentarios">${data[x].uploadedAt}</p>
-                    <p class="comentarios">${data[x].views} visualizações</p>
-                </div>
-            </div>
-        `;
-        document.getElementById("mediasMangaYoutube").innerHTML += cartao;
-    }
-}
+// =====================PARAMETROS DA URL==============
 
 async function pegarIdMangaUrl(){
     let idManga;
@@ -245,6 +140,125 @@ async function pegarIdMangaUrl(){
     }
     return idManga;
 }
+
+function parametroDoUrl(parametro) {
+    var url = location.search.substring(1, location.search.length);
+    var valorParametro = false;
+    var parametros = url.split("&");
+    for (i=0; i<parametros.length;i++) {
+        nomeParametro = parametros[i].substring(0,parametros[i].indexOf('='));
+        if (nomeParametro == parametro) {
+            valorParametro = parametros[i].substring(parametros[i].indexOf('=')+1)
+        }
+    }
+    if (valorParametro) {
+        return valorParametro;
+    }
+    else {
+        return undefined;
+    }
+}
+
+async function pegarMangaUrl(){
+    const resp = await fetch(`https://jikan1.p.rapidapi.com/search/manga?q=${manga}`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-host": "jikan1.p.rapidapi.com"
+        }}
+    )
+    const data = await resp.json()
+    const result = await data.results
+    return result;
+}
+
+// =======================PERSONAGENS====================
+
+// ======================API============
+
+async function pegarPersonagens(id) {
+    const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${id}/characters`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-host": "jikan1.p.rapidapi.com"
+        }}
+    )
+    const data = await resp.json()
+    // console.log(data)
+    if(data.message){
+        return {
+            erro: data.error,
+            resp: data
+        }
+    } else {
+        // console.log(data)
+        return {
+            erro: false,
+            resp: data.characters
+        }
+    }
+    
+}
+
+// ==============Mostrar na tela parsonagens==================
+function mostrarPersonagens(personagensManga) {
+    document.getElementById("personagens").innerHTML="<h1>Personagens Principais</h1>";
+    for(let a=0; a<personagensManga.length; a++) {
+        if(personagensManga[a].role=="Main") {
+            document.getElementById("personagens").innerHTML+=`
+                <a href="${personagensManga[a].url}" target="blank_">
+                    <div class="imagemCartao">
+                        <img src="${personagensManga[a].image_url}" alt="personagem">
+                    </div>
+                    <div class="conteudoCartao">
+                        <h2>${personagensManga[a].name}</h2>
+                        <p>${personagensManga[a].role}</p>
+                        <p>Saiba mais!!!</p>
+                    </div>
+                </a>
+            `
+        }
+    }
+}
+
+// ==========================Noticias relacionadas=============
+
+// =======================API==================
+
+async function newsManga(paramId) {
+    const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${paramId}/news`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-host": "jikan1.p.rapidapi.com"
+        }}
+    )
+    const data = await resp.json();
+    return data.articles;
+}
+
+// =======================Mostrar noticias na tela===============
+
+async function mostrarOutrasNoticias(noticias) {
+    document.getElementById("outrosSobreManga").innerHTML = "<h1>Relacionado</h1><div id='conteudoCartoesOutros'>";
+    for(let x=0; x<10; x++) {
+        document.getElementById("conteudoCartoesOutros").innerHTML+=`
+        <div class="cartaoOutros">
+            <div class="divOutrosImagem">
+                <img src="${noticias[x].image_url}" alt="${noticias[x].title}">
+            </div>
+            <div class="conteudoOutros">
+                <h2>${noticias[x].title}</h2>
+                <p>${noticias[x].intro}</p> <br>
+                <p class="comentarios"><strong>Comentarios:</strong> ${noticias[x].comments}</p>
+            </div>
+            <a href="${noticias[x].url}" style="text-align: center;" target="blank_">Mais Sobre</a>
+        </div>
+    `}
+}
+
+// ===================================Funcao inicial============
 
 async function mostrarMangas() {
     let idDoManga = await pegarIdMangaUrl();
