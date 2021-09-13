@@ -45,8 +45,8 @@ async function pegarMangaUrl(){
     const resp = await fetch(`https://jikan1.p.rapidapi.com/search/manga?q=${manga}`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "jikan1.p.rapidapi.com",
-		    "x-rapidapi-key": "d7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc"
+            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-host": "jikan1.p.rapidapi.com"
         }}
     )
     const data = await resp.json()
@@ -58,19 +58,41 @@ async function pegarPersonagens(id) {
     const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${id}/characters`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "jikan1.p.rapidapi.com",
-		    "x-rapidapi-key": "d7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc"
+            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-host": "jikan1.p.rapidapi.com"
         }}
     )
     const data = await resp.json()
-    return data.characters;
+    // console.log(data)
+    if(data.message){
+        return {
+            erro: data.error,
+            resp: data
+        }
+    } else {
+        // console.log(data)
+        return {
+            erro: false,
+            resp: data.characters
+        }
+    }
+    // const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${id}/characters`, {
+    //     "method": "GET",
+    //     "headers": {
+    //         "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+    //         "x-rapidapi-host": "jikan1.p.rapidapi.com"
+    //     }}
+    // ).catch(function(erro) {
+    //     console.log(erro)
+    // })
+    
 }
 async function musicasManga(nome) {
     const resp = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${nome}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-		    "x-rapidapi-key": "d7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc"
+            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b"
         }
     })
     const data = await resp.json()
@@ -81,54 +103,18 @@ async function newsManga(paramId) {
     const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${paramId}/news`, {
         "method": "GET",
         "headers": {
-            'x-rapidapi-host': 'jikan1.p.rapidapi.com',
-            'x-rapidapi-key': 'd7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc'
+            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-host": "jikan1.p.rapidapi.com"
         }}
     )
     const data = await resp.json();
     return data.articles;
 }
 
-async function musicaYoutube(pesquisa) {
-    const resp = await fetch(`https://simple-youtube-search.p.rapidapi.com/search?query=rap%20do%20${pesquisa}%20Portugues-br&type=video&safesearch=false`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "simple-youtube-search.p.rapidapi.com",
-		    "x-rapidapi-key": "d7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc"
-        }}
-    )
-    const data = await resp.json();
-    return data.results;
-}
-
-async function preencherMusicasYoutube(nomePesquisa) {
-    document.getElementById("mediasManga").innerHTML = "";
-    var tam = 6;
-    data = await musicaYoutube(nomePesquisa);
-    if(data.length<6){tam = data.length}
-    for(let x=0; x<tam; x++) {
-        // data.data.length
-        cartao = `
-            <div class="cartaoMusicaYoutube">
-                <div class="divVideo">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/${data[x].id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="conteudoOutrosVideo">
-                    <h2 class="comentarios">${data[x].title}</h2>
-                    <p class="comentarios">${data[x].uploadedAt}</p>
-                    <p class="comentarios">${data[x].views} visualizações</p>
-                </div>
-            </div>
-        `;
-        document.getElementById("mediasManga").innerHTML += cartao;
-    }
-}
-
 async function preencherMusicas(personagem) {
     document.getElementById("mediasManga").innerHTML = "<h1 style='color: white;'>Mídias</h1>";
     // const nomePesquisa = decodeURI(manga).split(" ").join("").split(" ")[0].split(":")[0].split(" ")[0];
-    // var nomePesquisa = "rap do "+personagem.name.split(",")[personagem.name.split(",").length-1];
-    var nomePesquisa = personagem;
+    var nomePesquisa = "rap do "+personagem.name.split(",")[personagem.name.split(",").length-1];
     if(nomePesquisa=="rap do Mitsuki") {
         nomePesquisa = "rap do Boruto";
     } else if(nomePesquisa=="rap do Brook") {
@@ -137,7 +123,6 @@ async function preencherMusicas(personagem) {
         nomePesquisa = "rap do Goku";
     }
     var tam = 3;
-    console.log("oi")
     data = await musicasManga(nomePesquisa);
     if(data.data.length<3){tam = data.data.length}
     for(let x=0; x<tam; x++) {
@@ -155,10 +140,18 @@ async function preencherMusicas(personagem) {
         </div>
         `
         document.getElementById("mediasManga").innerHTML += cartao;
+        if(x==tam-1) {
+            document.getElementById("mediasManga").innerHTML += `<p class='maisMidias' onclick='maisMidias(this)'>Mais midias</p>`;
+        }
         setTimeout(() => {
             document.getElementById(data.data[x].id).volume = 0.2;
         }, 1000)
     }
+}
+function maisMidias(campo) {
+    document.getElementById("midias").style.display = "block";
+    campo.innerHTML = "Atualizar";
+    preencherMusicasYoutube(manga)
 }
 
 function mostrarPersonagens(personagensManga) {
@@ -198,6 +191,41 @@ async function mostrarOutrasNoticias(noticias) {
     `}
 }
 
+async function musicaYoutube(pesquisa) {
+    const resp = await fetch(`https://simple-youtube-search.p.rapidapi.com/search?query=rap%20do%20${pesquisa}%20Portugues-br&type=video&safesearch=false`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "simple-youtube-search.p.rapidapi.com",
+		    "x-rapidapi-key": "d7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc"
+        }}
+    )
+    const data = await resp.json();
+    return data.results;
+}
+
+async function preencherMusicasYoutube(nomePesquisa) {
+    document.getElementById("mediasMangaYoutube").innerHTML = "";
+    var tam = 6;
+    data = await musicaYoutube(nomePesquisa);
+    if(data.length<6){tam = data.length}
+    for(let x=0; x<tam; x++) {
+        // data.data.length
+        cartao = `
+            <div class="cartaoMusicaYoutube">
+                <div class="divVideo">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/${data[x].id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="conteudoOutrosVideo">
+                    <h2 class="comentarios">${data[x].title}</h2>
+                    <p class="comentarios">${data[x].uploadedAt}</p>
+                    <p class="comentarios">${data[x].views} visualizações</p>
+                </div>
+            </div>
+        `;
+        document.getElementById("mediasMangaYoutube").innerHTML += cartao;
+    }
+}
+
 async function pegarIdMangaUrl(){
     let idManga;
     let mangaUrl = await pegarMangaUrl();
@@ -222,10 +250,18 @@ async function mostrarMangas() {
     let idDoManga = await pegarIdMangaUrl();
     urlParaCompartilhar()
     // preencherMusicas()
-    // const personagens = await pegarPersonagens(idDoManga)
-    // preencherMusicas(personagens[0])
-    preencherMusicasYoutube(manga)
-    // mostrarPersonagens(personagens)
-    const noticiasManga = await newsManga(idDoManga)
-    mostrarOutrasNoticias(noticiasManga)
+    const personagens = await pegarPersonagens(idDoManga)
+    if(personagens.erro==false) {
+        // console.log(personagens)
+        preencherMusicas(personagens.resp[0])
+        mostrarPersonagens(personagens.resp)
+        const noticiasManga = await newsManga(idDoManga)
+        mostrarOutrasNoticias(noticiasManga)
+    } else {
+        document.getElementById("midias").style.display = "block";
+        document.getElementById("mediasManga").style.display = "none";
+        document.getElementById("personagens").innerHTML = "<p>Tivemos problemas na requisição <br> Por favor tente atualizar a página!</p>";
+        preencherMusicasYoutube(manga)
+        mostrarOutrasNoticias(await newsManga(idDoManga))
+    }
 }

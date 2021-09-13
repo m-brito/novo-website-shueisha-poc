@@ -52,7 +52,64 @@
     padding: 100px 0;
     margin-bottom: 50px;
 }
-#mediasManga{
+
+p.maisMidias{
+    padding: 10px;
+    background-color: #8d8d8d;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#midias{
+    display: none;
+    width: 100%;
+    /* background-color: #1B1B1B; */
+    margin-top: 150px;
+}
+#midias{
+    text-align: center;
+}
+#midias h1#tituloMidias{
+    margin-top: 50px;
+}
+.cartaoMusicaYoutube{
+    width: 500px;
+    min-height: 450px;
+    margin: 20px;
+    background-color: #1b1b1b;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cartaoMusicaYoutube .divVideo{
+    width: 500px;
+    height: 250px;
+}
+.cartaoMusicaYoutube .divVideo iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+}
+.cartaoMusicaYoutube .conteudoOutrosVideo{
+    width: 500px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: justify;
+    color: white;
+    word-wrap: break-word;
+}
+.cartaoMusicaYoutube .conteudoOutrosVideo p{
+    width: 500px;
+    padding: 0 20px;
+    text-align: center;
+}
+#mediasMangaYoutube{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,6 +119,35 @@
     padding: 100px 0;
     margin-bottom: 50px;
     flex-wrap: wrap;
+    /* overflow: auto; */
+}
+#mediasMangaYoutube::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+    border-radius: 20px;
+}
+#mediasMangaYoutube::-webkit-scrollbar {
+    width: 8px;
+    background: #6fc5e9;
+    border-radius: 20px;
+}
+#mediasMangaYoutube::-webkit-scrollbar-thumb {
+    background: #6fc5e9;
+    border-radius: 20px;
+}
+
+/* ========================== */
+
+#mediasManga{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B1B1B;
+    width: 100%;
+    height: 500px;
+    padding: 100px 0;
+    margin-bottom: 50px;
     /* overflow: auto; */
 }
 #mediasManga::-webkit-scrollbar-track {
@@ -240,52 +326,6 @@ audio::-webkit-media-controls-enclosure {
     color: white;
     flex-wrap: wrap;
 }
-#midias{
-    width: 100%;
-    /* background-color: #1B1B1B; */
-    margin-top: 150px;
-}
-#midias{
-    text-align: center;
-}
-#midias h1#tituloMidias{
-    margin-top: 50px;
-}
-.cartaoMusicaYoutube{
-    width: 500px;
-    min-height: 450px;
-    margin: 20px;
-    background-color: #1b1b1b;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.cartaoMusicaYoutube .divVideo{
-    width: 500px;
-    height: 250px;
-}
-.cartaoMusicaYoutube .divVideo iframe{
-    width: 100%;
-    height: 100%;
-    border-radius: 20px 20px 0 0;
-}
-.cartaoMusicaYoutube .conteudoOutrosVideo{
-    width: 500px;
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    text-align: justify;
-    color: white;
-    word-wrap: break-word;
-}
-.cartaoMusicaYoutube .conteudoOutrosVideo p{
-    width: 500px;
-    padding: 0 20px;
-    text-align: center;
-}
 #outrosSobreManga .cartaoOutros{
     min-height: 800px;
     width: 300px;
@@ -417,13 +457,13 @@ audio::-webkit-media-controls-enclosure {
     #rodape #linksRodape p{
         margin: 0 0 20px 0 !important;
     }
+    .cartaoMusicaYoutube, .cartaoMusicaYoutube .divVideo iframe, .divVideo, .cartaoMusicaYoutube .conteudoOutrosVideo, .cartaoMusicaYoutube .conteudoOutrosVideo p{
+        width: 300px !important;
+    }
     #personagens a{
         flex-direction: column;
         height: 450px;
         width: 250px;
-    }
-    .cartaoMusicaYoutube, .cartaoMusicaYoutube .divVideo iframe, .divVideo, .cartaoMusicaYoutube .conteudoOutrosVideo, .cartaoMusicaYoutube .conteudoOutrosVideo p{
-        width: 300px !important;
     }
     #personagens a .conteudoCartao{
         text-align: center;
