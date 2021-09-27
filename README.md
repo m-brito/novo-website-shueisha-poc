@@ -55,10 +55,10 @@ Projeto desenvolvido durante **A Jornada #kick** organizado pela [#Kick](http://
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
   <img alt="Home" title="#Home" src="./assets/Home.png" width="400px">
+	
+  <img alt="Loja" title="#Loja" src="./assets/Loja.png" width="400px">
 
   <img alt="Sobre Nós" title="#Sobre Nós" src="./assets/Sobre-nos.png" width="400px">
-  
-  <img alt="Loja" title="#Loja" src="./assets/Loja.png" width="400px">
   
   <img alt="Boruto" title="#Boruto" src="./assets/Boruto.png" width="400px">
 </p>
