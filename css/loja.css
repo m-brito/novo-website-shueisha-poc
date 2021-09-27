@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
     overflow: hidden;
     position: relative;
     color: white;
@@ -34,11 +34,34 @@
     width: 100%;
 }
 .cartaoProduto p{
+    padding: 10px;
     font-size: 22px;
+}
+.cartaoProduto h1{
+    text-align: center;
 }
 .cartaoProduto a{
     font-size: 22px;
     color: #6fc5e9;
+}
+.erro-conexao{
+    margin: 100px auto !important;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+.erro-conexao button{
+    border: 0;
+    padding: 15px 10px;
+    background-color: #6fc5e9;
+    color: white;
+    font-weight: bold;
+    margin: 20px;
+    cursor: pointer;
 }
 
 

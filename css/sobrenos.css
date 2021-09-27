@@ -35,7 +35,7 @@ Caso queira criar “Variáveis globais” (disponíveis para todos os elementos
 }
 #apresentacao p{
     width: 100%;
-    text-align: justify;
+    text-align: left;
     font-weight: normal;
     font-size: 25px;
     display: flex;
@@ -190,13 +190,13 @@ body{
 }
 
 .conteudoCartao p{
-    text-align: justify;
+    text-align: left;
     margin-top: 10px;
 }
 
 p.comentarios{
     width: 70%;
-    text-align: justify;
+    text-align: left;
 }
 .mangasLinhaDoTempo{
     width: 100%;
@@ -218,7 +218,7 @@ p.comentarios{
     flex-wrap: nowrap;
     width: 150px !important;
     max-width: none !important;
-    text-align: center;
+    text-align: left;
 }
 
 /* ============RESPONSIVIDADE================ */

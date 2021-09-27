@@ -92,7 +92,7 @@ body{
 
 .nav-menu ul ul li a {
     display: block;
-    text-align: center;
+    text-align: left;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +122,7 @@ body{
     font-size: 35px;
     box-sizing: border-box;
     padding: 5px 0;
-    text-align: center;
+    text-align: left;
     width: 100%;
     position: absolute;
     top: 0;
@@ -137,7 +137,7 @@ body{
     position: absolute;
     bottom: 10%;
     width: 100%;
-    text-align: center;
+    text-align: left;
     min-height: 10%;
     display: flex;
     align-items: center;
@@ -187,7 +187,7 @@ body{
 
 .carrossel .caixaBotoes{
     background-color: rgba(0, 0, 0, 0.815);
-    text-align: center;
+    text-align: left;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -246,7 +246,8 @@ body{
     width: 150px;
     /* height: 100px;
     opacity: 0.1; */
-    margin-right: 50px;
+    /* margin-right: 50px; */
+    margin: auto;
 }
 #rodape div#linksRodape p{
     margin-left: 50px;

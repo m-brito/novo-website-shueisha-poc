@@ -29,7 +29,7 @@ document.getElementById("menuDesativa").addEventListener("click", function(){
 
 // ==============Pegar produtos ou se der erro mostrar produtos da 'lista de emergencia' que estao no carrinho================
 async function produtosLoja() {
-    const resp = await fetch(`https://pjtoapis.000webhostapp.com/classes/todosprodutos.php`, {
+    const resp = await fetch(`/classes/todosprodutos.php`, {
         "method": "GET",
     }).catch(function(e){
         loja=listaEmergencia;

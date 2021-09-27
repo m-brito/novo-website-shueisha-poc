@@ -52,7 +52,7 @@
     background-color: transparent;
 }
 #boleto #conteudoBoleto #itensBoleto .cartaoProduto .dadosItemCarrinho, #enderecoBoleto .cartaoEndereco .dadosEndereco{
-    text-align: center;
+    text-align: left;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,7 +182,7 @@
 #formularioEndereco form h1{
     font-size: 50px;
     padding-bottom: 50px;
-    text-align: center;
+    text-align: left;
 }
 #formularioEndereco form div:not(.grupoInput){
     width: 80%;

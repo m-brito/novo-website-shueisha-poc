@@ -23,7 +23,7 @@
 }
 #apresentacaoAnime h2{
     width: 100%;
-    text-align: center;
+    text-align: left;
     margin-bottom: 10px;
     font-size: 40px;
 }
@@ -31,7 +31,7 @@
     height: calc(100% - 45px);
     /* margin-top: 15px; */
     width: 100%;
-    text-align: justify;
+    text-align: left;
     font-weight: normal;
     font-size: 25px;
     display: flex;
@@ -69,7 +69,7 @@ p.maisMidias{
     margin-top: 150px;
 }
 #midias{
-    text-align: center;
+    text-align: left;
 }
 #midias h1#tituloMidias{
     margin-top: 50px;
@@ -100,14 +100,14 @@ p.maisMidias{
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    text-align: justify;
+    text-align: left;
     color: white;
     word-wrap: break-word;
 }
 .cartaoMusicaYoutube .conteudoOutrosVideo p{
     width: 500px;
     padding: 0 20px;
-    text-align: center;
+    text-align: left;
 }
 #mediasMangaYoutube{
     display: flex;
@@ -261,7 +261,7 @@ audio::-webkit-media-controls-enclosure {
     align-items: center;
 }
 #personagens h1{
-    text-align: center;
+    text-align: left;
     margin-bottom: 50px;
     color: white;
     font-weight: bold;
@@ -346,13 +346,13 @@ audio::-webkit-media-controls-enclosure {
 }
 #outrosSobreManga .cartaoOutros .conteudoOutros{
     padding: 20px;
-    text-align: justify;
+    text-align: left;
 }
 #outrosSobreManga .cartaoOutros .conteudoOutros p{
     width: 100%;
 }
 #outrosSobreManga .cartaoOutros .conteudoOutros .comentarios{
-    text-align: center;
+    text-align: left;
 }
 #outrosSobreManga .cartaoOutros .divOutrosImagem{
     height: 400px;
@@ -388,7 +388,7 @@ audio::-webkit-media-controls-enclosure {
     cursor: pointer;
     margin: 20px 50px;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
     display: flex;
     align-items: center;
     width: 250px;
@@ -466,7 +466,7 @@ audio::-webkit-media-controls-enclosure {
         width: 250px;
     }
     #personagens a .conteudoCartao{
-        text-align: center;
+        text-align: left;
         height: calc(100% - 250px);
         width: auto;
     }

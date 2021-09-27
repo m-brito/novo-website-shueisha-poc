@@ -11,20 +11,17 @@ var carrinho = ["0"];
 // ================Requisicoes=====================
 
 async function produtosLoja() {
-    const resp = await fetch(`https://pjtoapis.000webhostapp.com/classes/todosprodutos.php`, {
-        "method": "GET",
-    }).catch(function(e){
-        document.querySelector(".principal-cartoes").innerHTML="";
-        loja=listaEmergencia;
-        mostrarListaProdutos(loja);
-        return listaEmergencia;
-        // alert("Ocorreu um erro vamos recarregar a pagina!")
-        // location.reload();
-    })
-    
-    const data = await resp.json()
-    // const result = await data.results
-    return data;
+    try{
+        const resp = await fetch(`/classes/todosprodutos.php`, {
+            "method": "GET",
+        })
+        const data = await resp.json()
+        // const result = await data.results
+        return data;
+    }catch{
+        document.querySelector("#conteudo").innerHTML="<p class='erro-conexao'>Tivemos um erro de conexão<br>Por favor tente novamente<br><a href=''><button>Atualizar</button></a></p>";
+        return false;
+    }
 }
 
 // ===================Mostrar Produtos na tela===============
@@ -187,10 +184,12 @@ function atualizaCarrinho(){
 
 async function imprimirProdutos() {
     const produtos = await produtosLoja();
-    atualizaCarrinho()
-    loja=produtos
-    document.querySelector(".principal-cartoes").innerHTML="";
-    await mostrarListaProdutos(produtos)
+    if(produtos!=false) {
+        atualizaCarrinho()
+        loja=produtos
+        document.querySelector(".principal-cartoes").innerHTML="";
+        await mostrarListaProdutos(produtos)
+    }
 }
 
 // ========================Mostrar Carrinho na tela==================
