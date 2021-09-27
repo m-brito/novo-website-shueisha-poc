@@ -73,13 +73,13 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-Instale a extensão Live Server no Visual Studio:
-      Name: Live Server
-      Id: ritwickdey.liveserver
-      Description: Launch a development local Server with live reload feature for static & dynamic pages
-      Version: 5.6.1
-      Publisher: Ritwick Dey
-      VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+Instale a extensão Live Server no Visual Studio: <br>
+      Name: Live Server <br>
+      Id: ritwickdey.liveserver <br>
+      Description: Launch a development local Server with live reload feature for static & dynamic pages <br>
+      Version: 5.6.1 <br>
+      Publisher: Ritwick Dey <br>
+      VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer <br>
 
 #### 🧭 Rodando a aplicação web (Frontend)
 
