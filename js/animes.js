@@ -6,10 +6,10 @@ mostrarMangas()
 
 // =============================API=======================
 async function musicaYoutube(pesquisa) {
-    const resp = await fetch(`https://simple-youtube-search.p.rapidapi.com/search?query=rap%20do%20${pesquisa}%20Portugues-br&type=video&safesearch=false`, {
+    const resp = await fetch(`/search?query=rap%20do%20${pesquisa}%20Portugues-br&type=video&safesearch=false`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "simple-youtube-search.p.rapidapi.com",
+            "x-rapidapi-host": "",
 		    "x-rapidapi-key": ""
         }}
     )
@@ -18,10 +18,10 @@ async function musicaYoutube(pesquisa) {
 }
 
 async function musicasManga(nome) {
-    const resp = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${nome}`, {
+    const resp = await fetch(`/search?q=${nome}`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-host": "",
             "x-rapidapi-key": ""
         }
     })
@@ -164,11 +164,11 @@ function parametroDoUrl(parametro) {
 }
 
 async function pegarMangaUrl(){
-    const resp = await fetch(`https://jikan1.p.rapidapi.com/search/manga?q=${manga}`, {
+    const resp = await fetch(`/search/manga?q=${manga}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "",
-            "x-rapidapi-host": "jikan1.p.rapidapi.com"
+            "x-rapidapi-host": ""
         }}
     )
     const data = await resp.json()
@@ -181,11 +181,11 @@ async function pegarMangaUrl(){
 // ======================API============
 
 async function pegarPersonagens(id) {
-    const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${id}/characters`, {
+    const resp = await fetch(`/manga/${id}/characters`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "",
-            "x-rapidapi-host": "jikan1.p.rapidapi.com"
+            "x-rapidapi-host": ""
         }}
     )
     const data = await resp.json()
@@ -231,11 +231,11 @@ function mostrarPersonagens(personagensManga) {
 // =======================API==================
 
 async function newsManga(paramId) {
-    const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${paramId}/news`, {
+    const resp = await fetch(`/manga/${paramId}/news`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "",
-            "x-rapidapi-host": "jikan1.p.rapidapi.com"
+            "x-rapidapi-host": ""
         }}
     )
     const data = await resp.json();
