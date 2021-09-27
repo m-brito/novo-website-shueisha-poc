@@ -10,7 +10,7 @@ async function musicaYoutube(pesquisa) {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "simple-youtube-search.p.rapidapi.com",
-		    "x-rapidapi-key": "d7d7a627eamsh35998556b011535p1b5ae5jsn851143626fdc"
+		    "x-rapidapi-key": ""
         }}
     )
     const data = await resp.json();
@@ -22,7 +22,7 @@ async function musicasManga(nome) {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b"
+            "x-rapidapi-key": ""
         }
     })
     const data = await resp.json()
@@ -93,8 +93,12 @@ async function preencherMusicas(personagem) {
 }
 function maisMidias(campo) {
     document.getElementById("midias").style.display = "block";
+    campo.style.display = "none";
     campo.innerHTML = "Atualizar";
     preencherMusicasYoutube(manga)
+    setTimeout(() => {
+        campo.style.display = "flex";
+    }, 1000)
 }
 
 // ============================================COMPARTILHAMENTO=======
@@ -163,7 +167,7 @@ async function pegarMangaUrl(){
     const resp = await fetch(`https://jikan1.p.rapidapi.com/search/manga?q=${manga}`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-key": "",
             "x-rapidapi-host": "jikan1.p.rapidapi.com"
         }}
     )
@@ -180,7 +184,7 @@ async function pegarPersonagens(id) {
     const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${id}/characters`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-key": "",
             "x-rapidapi-host": "jikan1.p.rapidapi.com"
         }}
     )
@@ -230,7 +234,7 @@ async function newsManga(paramId) {
     const resp = await fetch(`https://jikan1.p.rapidapi.com/manga/${paramId}/news`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "2dba171373msh69cb522f708c18bp155cbbjsn8a376a6c365b",
+            "x-rapidapi-key": "",
             "x-rapidapi-host": "jikan1.p.rapidapi.com"
         }}
     )
