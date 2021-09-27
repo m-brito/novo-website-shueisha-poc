@@ -48,7 +48,7 @@ async function mostrarListaProdutos(produto) {
                     <img src="${produto[x].image}" alt="">
                 </div>
                 <p>${produto[x].name}</p>
-                <h1>R$${(valor*5.25).toFixed(2)} ou US$${valor}</h1>
+                <h1>R$${(valor*5.25).toFixed(2)} / <span>US$${valor}</span></h1>
                 <a href="${produto[x].url}" target="blank_">Mais Sobre</a>
             </div>
             `

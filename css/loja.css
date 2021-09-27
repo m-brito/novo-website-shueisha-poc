@@ -36,9 +36,15 @@
 .cartaoProduto p{
     padding: 10px;
     font-size: 22px;
+    margin-bottom: 100px;
 }
 .cartaoProduto h1{
+    position: absolute;
+    bottom: 40px;
     text-align: center;
+}
+.cartaoProduto h1 span{
+    font-size: 15px;
 }
 .cartaoProduto a{
     font-size: 22px;
@@ -62,6 +68,11 @@
     font-weight: bold;
     margin: 20px;
     cursor: pointer;
+}
+
+#carregando-gif{
+    height: 30px;
+    width: 30px;
 }
 
 
